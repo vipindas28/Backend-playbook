@@ -1,0 +1,27 @@
+{
+  "name": "backend-playbook",
+  "version": "1.0.0",
+  "description": "This repository is a collection of backend systems and experiments focused on scalability, reliability, and real-world engineering challenges.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "contributors": [
+    {
+      "name": "Atul",
+      "url": "https://github.com/Atul-47"
+    },
+    {
+      "name": "Vipin",
+      "url": "https://github.com/vipindas28"
+    }
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
