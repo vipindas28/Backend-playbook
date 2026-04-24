@@ -1,4 +1,4 @@
-export async function fixedRetry<T> (
+export async function exponentialRetry<T> (
     fn: () => Promise<T>,
     retries: number,
     delayMs: number
@@ -7,12 +7,15 @@ export async function fixedRetry<T> (
 
     for (let i=1; i <= retries; i++) {
         try {
-            console.log(`Fixed Retry ${delayMs}ms => Attempt ${i}`);
+            console.log(`Exponential Retry => Attempt ${i}`);
             return await fn();
         } catch (e) {
             lastError = e;
+            // exponentially increases wait time 
             if (i < retries){
-                await wait(delayMs);
+                const delay = delayMs * Math.pow(2, i-1);
+                console.log(`Waiting ${delay}ms`)
+                await wait(delay);
             }
         }
     }
