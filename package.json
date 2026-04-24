@@ -4,7 +4,8 @@
   "description": "This repository is a collection of backend systems and experiments focused on scalability, reliability, and real-world engineering challenges.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "retry": "npx ts-node resilience/nodeJS/scenarios/intermittentFailure.ts"
   },
   "keywords": [],
   "author": "",

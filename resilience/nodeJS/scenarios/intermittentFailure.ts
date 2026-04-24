@@ -1,6 +1,7 @@
 import { flakyService } from "../services/flakyService";
 import { fixedRetry } from "../retry/fixed_retry";
 import { exponentialRetry } from "../retry/exponential_retry";
+import { jitterRetry } from "../retry/jitter_retry";
 
 const RETRY = 3;
 const DELAY = 1000;
@@ -8,6 +9,9 @@ async function runScenarios() {
     await runSafe(() => fixedRetry(flakyService, RETRY, DELAY));
 
     await runSafe(() => exponentialRetry(flakyService, RETRY, DELAY));
+
+    await runSafe(() => jitterRetry(flakyService, RETRY, DELAY));
+
 }
 
 async function runSafe(fn: () => Promise<any>) {
