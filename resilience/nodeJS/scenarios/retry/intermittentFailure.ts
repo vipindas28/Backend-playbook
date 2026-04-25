@@ -1,7 +1,7 @@
-import { flakyService } from "../services/flakyService";
-import { fixedRetry } from "../retry/fixed_retry";
-import { exponentialRetry } from "../retry/exponential_retry";
-import { jitterRetry } from "../retry/jitter_retry";
+import { flakyService } from "../../services/flakyService";
+import { fixedRetry } from "../../retry/fixed_retry";
+import { exponentialRetry } from "../../retry/exponential_retry";
+import { jitterRetry } from "../../retry/jitter_retry";
 
 const RETRY = 3;
 const DELAY = 1000;

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "retry": "npx ts-node resilience/nodeJS/scenarios/intermittentFailure.ts"
+    "retry": "npx ts-node resilience/nodeJS/scenarios/retry/intermittentFailure.ts",
+    "circuit": "npx ts-node resilience/nodeJS/scenarios/circuit_breaker/intermittentFailure.ts"
   },
   "keywords": [],
   "author": "",
