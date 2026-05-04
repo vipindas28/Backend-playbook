@@ -9,7 +9,7 @@ export function basicCircuitBreaker<T>(
 
     return async () => {
         if (state === "OPEN") {
-            throw new Error("Failed: Circuit is Open");
+            throw new Error("Basic Circuit Failed: Circuit is Open");
         }
         try {
             const result = await fn();
@@ -17,11 +17,11 @@ export function basicCircuitBreaker<T>(
             return result;
         } catch (e) {
             failCount++;
-            console.log(`Failure count: ${failCount}`);
+            console.log(`Basic Circuit Failure count: ${failCount}`);
 
             if (failCount >= failureThreshold) {
                 state = "OPEN";
-                console.log("Circuit switched to OPEN")
+                console.log("Basic Circuit switched to OPEN")
             }
             throw e;            
         }
